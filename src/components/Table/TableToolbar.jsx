@@ -69,7 +69,7 @@ const TableToolbar = (props) => {
           onClose={handleClose}
         >
           {categories.map((category) => (
-            <MenuItem key={get(category, "id")}>
+            <MenuItem key={get(category, "id")} sx={styles.capitalizeStyle}>
               <Checkbox
                 checked={categoriesFilter.includes(get(category, "title", ""))}
                 size="small"
@@ -107,6 +107,7 @@ const styles = {
     display: "flex",
     alignItems: "center",
   },
+  capitalizeStyle: { textTransform: "capitalize" },
 };
 
 TableToolbar.propTypes = {

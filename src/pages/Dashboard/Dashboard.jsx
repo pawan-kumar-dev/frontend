@@ -120,6 +120,9 @@ const Dashboard = () => {
 
             <Menu anchorEl={anchorEl} open={open} onClose={handleClose}>
               <MenuItem onClick={onDownloadTransactions}>
+                {get(userFromLocalStorage, "displayName")}
+              </MenuItem>
+              <MenuItem onClick={onDownloadTransactions}>
                 Download Transaction
               </MenuItem>
               <MenuItem onClick={handleThemeClick}>
