@@ -67,7 +67,13 @@ const TableToolbar = (props) => {
           anchorEl={anchorEl}
           open={open}
           onClose={handleClose}
+          sx={{
+            maxHeight: 48 * 10,
+          }}
         >
+          <MenuItem onClick={(e) => handleClose(e, "search")}>
+            <FilterAltIcon /> Click to Filter
+          </MenuItem>
           {categories.map((category) => (
             <MenuItem key={get(category, "id")} sx={styles.capitalizeStyle}>
               <Checkbox
@@ -78,9 +84,6 @@ const TableToolbar = (props) => {
               {get(category, "title")}
             </MenuItem>
           ))}
-          <MenuItem onClick={(e) => handleClose(e, "search")}>
-            <FilterAltIcon /> Click to Filter
-          </MenuItem>
         </Menu>
       </Box>
     </Toolbar>

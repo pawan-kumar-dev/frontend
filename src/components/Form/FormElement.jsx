@@ -93,7 +93,9 @@ const AutocompleteInput = ({
           return get(option, "title");
         }}
         renderOption={(props, option) => (
-          <li {...props}>{get(option, "title")}</li>
+          <li {...props} style={{ textTransform: "capitalize" }}>
+            {get(option, "title")}
+          </li>
         )}
         freeSolo
         renderInput={(params) => (
